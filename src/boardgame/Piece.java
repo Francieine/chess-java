@@ -2,8 +2,8 @@ package boardgame;
 
 public class Piece {
 	
-	protected Position position; //class association
-	private Board board;
+	protected Position position; //Position class associate with Piece
+	private Board board; //Board class associate with Piece
 	
 	public Piece(Board board) {
 		this.board = board;

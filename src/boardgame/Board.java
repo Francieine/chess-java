@@ -3,7 +3,7 @@ package boardgame;
 public class Board {
 	private int rows;
 	private int columns;
-	private Piece [][] pieces;
+	private Piece [][] pieces; //piece of matrix
 	
 	public Board(int rows, int columns) {
 		if(rows < 1 || columns < 1) {
@@ -11,7 +11,7 @@ public class Board {
 		}
 		this.rows = rows;
 		this.columns = columns;
-		pieces = new Piece[rows][columns];
+		pieces = new Piece[rows][columns]; //instancing matrix rows and columns
 	}
 
 	public int getRows() {

@@ -39,7 +39,7 @@ public class Position {
 	
 
 	@Override
-	public String toString() {
+	public String toString() {  //mostrar posicao na tela
 		return row + ", " + column;
 	}
 	
