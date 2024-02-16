@@ -42,9 +42,5 @@ public class Position {
 	public String toString() {  //mostrar posicao na tela
 		return row + ", " + column;
 	}
-	
-	
-	
-	
 
 }
