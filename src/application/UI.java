@@ -8,6 +8,7 @@ import java.util.stream.Collectors;
 
 import chess.ChessMatch;
 import chess.ChessPiece;
+import chess.ChessPosition;
 import chess.ChessPostion;
 import chess.Color;
 
@@ -41,12 +42,12 @@ public class UI {
 	
 	
 
-	public static ChessPostion readChessPosition(Scanner sc) {
+	public static ChessPosition readChessPosition(Scanner sc) {
 		try {
 			String s = sc.nextLine();
 			char column = s.charAt(0);
 			int row = Integer.parseInt(s.substring(1));
-			return new ChessPostion(column, row);
+			return new ChessPosition(column, row);
 			
 		}
 		catch (RuntimeException e ) {
@@ -62,7 +63,16 @@ public class UI {
 		System.out.println();
 		printCapturedPieces(captured);
 		System.out.println("Turn:  " + chessMatch.getTurn());
-		System.out.println("Waiting player: " + chessMatch.getCurrentPlayer());
+		if(!chessMatch.getCheckMate()) {
+			System.out.println("Waiting player: " + chessMatch.getCurrentPlayer());
+			if(chessMatch.getCheck()) {
+				System.out.println("CHECK");
+			}
+		}else {
+			System.out.println("CHECKMATE!");
+			System.out.println("WINNER: " + chessMatch.getCurrentPlayer());
+		}
+		
 		if(chessMatch.getCheck()) {
 			System.out.println("CHECK!");
 		}

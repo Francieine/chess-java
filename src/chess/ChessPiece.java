@@ -18,8 +18,8 @@ public class ChessPiece extends Piece{
 
 	
 	
-	public ChessPostion getChessPosition() {
-		return ChessPostion.fromPosition(position);
+	public ChessPosition getChessPosition() {
+		return ChessPosition.fromPosition(position);
 	}
 	
 	protected boolean isThereOpponentPiece(Position position) {

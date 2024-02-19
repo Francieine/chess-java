@@ -8,6 +8,7 @@ import java.util.Scanner;
 import chess.ChessException;
 import chess.ChessMatch;
 import chess.ChessPiece;
+import chess.ChessPosition;
 import chess.ChessPostion;
 
 public class Program {
@@ -20,7 +21,7 @@ public class Program {
 		List<ChessPiece> captured = new ArrayList<>();
 		
 		
-		while(true) {
+		while(!chessMatch.getCheckMate()) {
 			try {
 			 
 				UI.clearScreen();
@@ -29,7 +30,7 @@ public class Program {
 				
 				System.out.println("");
 				System.out.print("Source");
-				ChessPostion source = UI.readChessPosition(sc);
+				ChessPosition source = UI.readChessPosition(sc);
 				
 				boolean[][] possibleMoves  = chessMatch.possibleMoves(source);
 				UI.clearScreen();
@@ -39,7 +40,7 @@ public class Program {
 				
 				System.out.println("");
 				System.out.print("Target");
-				ChessPostion target = UI.readChessPosition(sc);
+				ChessPosition target = UI.readChessPosition(sc);
 				
 				ChessPiece capturedPiece = chessMatch.performChessMove(source, target);
 				
@@ -63,7 +64,8 @@ public class Program {
 		
 		
 		}
-		
+		UI.clearScreen();
+		UI.printMatch(chessMatch, captured);
 	}
 
 }
