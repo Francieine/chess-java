@@ -14,7 +14,6 @@ public class Piece {
 	}
 
 	public boolean possibleMove(Position target) {
-		// TODO Auto-generated method stub
 		return false;
 	}
 
